@@ -17,13 +17,13 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('apellidos');
-            $table->string('dni')->unique();
+            $table->string('dni');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('telefono');
-            $table->string('pais');
+            $table->string('telefono')->nullable();
+            $table->string('pais')->nullable();
             $table->string('iban');
-            $table->string('about');
+            $table->string('about')->nullable();
             $table->timestamps();
         });
     }

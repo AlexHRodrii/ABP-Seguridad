@@ -21,5 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::controller(UsuarioController::class)->prefix('')->group(function () {
    Route::post('/register', 'register');
-   Route::post('/login', 'login');
+   Route::post('/login', 'login')->middleware('throttle:login');
 });
